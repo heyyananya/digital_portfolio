@@ -30,7 +30,7 @@ const Divider = () => (
 );
 
 // High-fidelity tooltip wrapper with responsive caret positioning
-const Tooltip = ({ label, children, always = true }) => (
+const Tooltip = ({ label, children, always = false }) => (
   <span className={`group relative flex items-center justify-center ${always ? '' : 'hidden sm:flex'}`}>
     {children}
     {/* Floating tooltip block */}
@@ -95,7 +95,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
 
         <Divider />
 
-        <Tooltip label="GitHub">
+        <Tooltip label="GitHub" always={true}>
           <a
             href={profile.github}
             target="_blank"
@@ -107,7 +107,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
           </a>
         </Tooltip>
 
-        <Tooltip label="LinkedIn">
+        <Tooltip label="LinkedIn" always={true}>
           <a
             href={profile.linkedin}
             target="_blank"
@@ -119,7 +119,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
           </a>
         </Tooltip>
 
-        <Tooltip label="WhatsApp">
+        <Tooltip label="WhatsApp" always={true}>
           <button
             type="button"
             onClick={() => openWhatsApp()}
@@ -130,7 +130,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
           </button>
         </Tooltip>
 
-        <Tooltip label="Email">
+        <Tooltip label="Email" always={true}>
           <button
             type="button"
             onClick={() => openEmail('Hello Ananya')}
@@ -143,7 +143,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
 
         <Divider />
 
-        <Tooltip label="Resume">
+        <Tooltip label="Resume" always={true}>
           <a
             href={profile.resume}
             target="_blank"
@@ -155,7 +155,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
           </a>
         </Tooltip>
 
-        <Tooltip label={isDark ? 'Light mode' : 'Dark mode'}>
+        <Tooltip label={isDark ? 'Light mode' : 'Dark mode'} always={true}>
           <button
             type="button"
             onClick={onToggleTheme}
