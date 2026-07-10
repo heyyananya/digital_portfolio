@@ -9,7 +9,7 @@ const SECTIONS = [
   { id: 'about', label: 'About', icon: User },
   { id: 'skills', label: 'Skills', icon: Code2 },
   { id: 'projects', label: 'Projects', icon: FolderGit2, always: true },
-  { id: 'contact', label: 'Contact', icon: Mail, always: true },
+  { id: 'contact', label: 'Contact', icon: Mail },
 ];
 
 const BUTTON =
