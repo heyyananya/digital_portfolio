@@ -7,7 +7,7 @@ import { CleanLogo } from './CleanLogo';
  */
 export const ProjectPreview = ({ mark, name, logo }) => (
   <div
-    className="relative flex h-52 items-center gap-5 overflow-hidden rounded-xl border border-zinc-200
+    className="relative flex h-52 items-center justify-center sm:justify-start gap-5 overflow-hidden rounded-xl border border-zinc-200
                bg-zinc-50 px-6 dark:border-zinc-800 dark:bg-zinc-900"
   >
     <div className="dot-grid absolute inset-0 opacity-50" aria-hidden="true" />

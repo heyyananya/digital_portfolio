@@ -99,44 +99,56 @@ export const ProjectModal = ({ project, onClose }) => {
         }}
       >
         {/* Top Header Section */}
-        <div className="relative px-6 py-5 border-b border-zinc-200 dark:border-zinc-800 flex items-start justify-between gap-4">
-          <div className="flex items-center gap-4">
-            {logo && (
-              <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white flex items-center justify-center p-1">
-                <CleanLogo src={logo} alt={name} className="max-h-full max-w-full object-contain" />
-              </div>
-            )}
-            <div>
-              <h3 className="font-display text-xl sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">{name}</h3>
-              <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-0.5">{tagline}</p>
+        <div className="relative px-5 py-5 sm:px-6 sm:py-5 border-b border-zinc-200 dark:border-zinc-800 flex items-start gap-4 pr-14">
+          {logo && (
+            <div className="h-12 w-12 shrink-0 overflow-hidden rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white flex items-center justify-center p-1">
+              <CleanLogo src={logo} alt={name} className="max-h-full max-w-full object-contain" />
             </div>
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+              <h3 className="font-display text-lg sm:text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 truncate sm:whitespace-normal">{name}</h3>
+              <div className="w-fit">
+                <StatusBadge status={status} />
+              </div>
+            </div>
+            <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-0.5 leading-relaxed">{tagline}</p>
           </div>
           
-          <div className="flex items-center gap-3">
-            <StatusBadge status={status} />
-            <button 
-              onClick={triggerClose}
-              className="p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition"
-              aria-label="Close modal"
-            >
-              <X size={18} />
-            </button>
-          </div>
+          <button 
+            onClick={triggerClose}
+            className="absolute top-5 right-4 p-1.5 rounded-lg border border-zinc-200 dark:border-zinc-800 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-50 hover:bg-zinc-100 dark:hover:bg-zinc-900 transition z-10"
+            aria-label="Close modal"
+          >
+            <X size={18} />
+          </button>
         </div>
 
         {/* Tab Selector bar */}
-        <div className="flex border-b border-zinc-200 dark:border-zinc-800 px-6 bg-zinc-50/50 dark:bg-zinc-900/30">
+        <div className="flex border-b border-zinc-200 dark:border-zinc-800 px-4 sm:px-6 bg-zinc-50/50 dark:bg-zinc-900/30 overflow-x-auto scrollbar-none whitespace-nowrap">
           {['overview', 'features', 'stack'].map((tab) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`py-3 px-4 border-b-2 font-mono text-xs uppercase tracking-wider transition-all font-semibold ${
+              className={`px-3 sm:px-4 py-3.5 border-b-2 font-mono text-[10px] sm:text-[11px] uppercase tracking-wider font-bold transition-all duration-200 outline-none shrink-0 ${
                 activeTab === tab 
                   ? 'border-cyan-500 text-cyan-600 dark:text-cyan-400' 
                   : 'border-transparent text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100'
               }`}
             >
-              {tab === 'stack' ? 'Tech Stack & Links' : tab === 'features' ? 'Key Features' : tab}
+              {tab === 'stack' ? (
+                <>
+                  <span className="hidden sm:inline">Tech Stack & Links</span>
+                  <span className="sm:hidden">Tech Stack</span>
+                </>
+              ) : tab === 'features' ? (
+                <>
+                  <span className="hidden sm:inline">Key Features</span>
+                  <span className="sm:hidden">Features</span>
+                </>
+              ) : (
+                'Overview'
+              )}
             </button>
           ))}
         </div>
