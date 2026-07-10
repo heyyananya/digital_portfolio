@@ -14,7 +14,7 @@ import { SectionLabel } from '../components/SectionLabel';
 import { profile } from '../data/portfolio';
 import { openEmail, openPhone } from '../utils/contact';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+const API_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
 
 const EMPTY_FORM = { name: '', email: '', message: '' };
 
