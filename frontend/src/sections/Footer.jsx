@@ -1,7 +1,7 @@
 import React from 'react';
-import { Github, Linkedin, Mail, Phone } from 'lucide-react';
+import { Github, Linkedin, Mail } from 'lucide-react';
 import { profile } from '../data/portfolio';
-import { openEmail, openPhone } from '../utils/contact';
+import { openEmail } from '../utils/contact';
 
 // The extra bottom padding clears the dock, which is bottom-anchored on mobile.
 export const Footer = () => (
@@ -20,14 +20,7 @@ export const Footer = () => (
         >
           <Mail size={17} />
         </button>
-        <button
-          type="button"
-          onClick={openPhone}
-          aria-label="Call or copy my phone number"
-          className="transition hover:text-zinc-900 dark:hover:text-zinc-100"
-        >
-          <Phone size={17} />
-        </button>
+
         <a
           href={profile.linkedin}
           target="_blank"

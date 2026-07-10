@@ -59,19 +59,3 @@ export const openWhatsApp = (message = "Hi Ananya, I saw your portfolio.") => {
   );
 };
 
-/** Dials on mobile, and copies to the clipboard so desktop clicks still do something useful. */
-export const openPhone = async () => {
-  const number = getPhone();
-  if (!number) return false;
-
-  let copied = false;
-  try {
-    await navigator.clipboard.writeText(number);
-    copied = true;
-  } catch {
-    // Clipboard needs permission/secure context; dialing below is the real action.
-  }
-
-  window.location.href = `tel:${number}`;
-  return copied;
-};

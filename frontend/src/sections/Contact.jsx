@@ -7,12 +7,11 @@ import {
   Linkedin,
   Loader2,
   Mail,
-  Phone,
   Send,
 } from 'lucide-react';
 import { SectionLabel } from '../components/SectionLabel';
 import { profile } from '../data/portfolio';
-import { openEmail, openPhone } from '../utils/contact';
+import { openEmail } from '../utils/contact';
 
 const API_URL = import.meta.env.VITE_API_URL || `http://${window.location.hostname}:5000`;
 
@@ -43,18 +42,10 @@ export const Contact = () => {
   const [form, setForm] = useState(EMPTY_FORM);
   const [status, setStatus] = useState('idle'); // idle | sending | sent | error
   const [error, setError] = useState('');
-  const [phoneCopied, setPhoneCopied] = useState(false);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
     setForm((prev) => ({ ...prev, [name]: value }));
-  };
-
-  const handlePhone = async () => {
-    const copied = await openPhone();
-    if (!copied) return;
-    setPhoneCopied(true);
-    window.setTimeout(() => setPhoneCopied(false), 2000);
   };
 
   const handleSubmit = async (event) => {
@@ -106,20 +97,6 @@ export const Contact = () => {
               />
             </button>
 
-            <button type="button" onClick={handlePhone} className={CHANNEL_CLASS}>
-              <ChannelShell
-                icon={Phone}
-                label="Phone"
-                value={phoneCopied ? 'Number copied to clipboard' : 'Click to call or copy'}
-                trailing={
-                  phoneCopied ? (
-                    <Check size={17} className="shrink-0 text-zinc-900 dark:text-zinc-100" />
-                  ) : (
-                    <ArrowUpRight size={17} className={ARROW_CLASS} />
-                  )
-                }
-              />
-            </button>
 
             <a
               href={profile.linkedin}
