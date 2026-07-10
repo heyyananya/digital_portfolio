@@ -65,10 +65,12 @@ export const ProjectModal = ({ project, onClose }) => {
 
   return (
     <div 
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70 backdrop-blur-md"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-zinc-950/70"
       style={{
-        transition: 'opacity 350ms ease-out',
-        opacity: !isMounted || isClosing ? 0 : 1
+        transition: 'opacity 400ms ease-out, backdrop-filter 400ms ease-out',
+        opacity: !isMounted || isClosing ? 0 : 1,
+        backdropFilter: !isMounted || isClosing ? 'blur(0px)' : 'blur(12px)',
+        WebkitBackdropFilter: !isMounted || isClosing ? 'blur(0px)' : 'blur(12px)'
       }}
       onClick={handleBackdropClick}
       role="dialog"
@@ -76,15 +78,15 @@ export const ProjectModal = ({ project, onClose }) => {
     >
       {/* Modal Container with MacBook tilting lid open/close effect */}
       <div 
-        className="w-full max-w-3xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]"
+        className="w-full max-w-5xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]"
         style={{
           perspective: '1200px',
           transformStyle: 'preserve-3d',
-          transition: 'transform 450ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease-out',
+          transition: 'transform 500ms cubic-bezier(0.16, 1, 0.3, 1), opacity 450ms ease-out',
           transform: !isMounted 
-            ? 'scale(1) rotateX(-20deg) translateY(30px)' 
+            ? 'scale(0.96) rotateX(-16deg) translateY(24px)' 
             : isClosing
-              ? 'scale(1) rotateX(-20deg) translateY(30px)'
+              ? 'scale(0.96) rotateX(-16deg) translateY(24px)'
               : 'scale(1) rotateX(0deg) translateY(0deg)',
           opacity: !isMounted || isClosing ? 0 : 1
         }}

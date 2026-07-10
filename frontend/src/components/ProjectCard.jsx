@@ -20,7 +20,7 @@ export const ProjectCard = ({ project, onOpenDetails }) => {
   const primaryLink = links.live || links.source;
 
   return (
-    <article className="card flex flex-col overflow-hidden p-4 transition hover:border-zinc-400 dark:hover:border-zinc-600">
+    <article className="card h-full flex flex-col overflow-hidden p-4 transition hover:border-zinc-400 dark:hover:border-zinc-600">
       <div className="relative">
         <ProjectPreview mark={mark} name={name} logo={logo} />
 
@@ -91,7 +91,7 @@ export const ProjectCard = ({ project, onOpenDetails }) => {
           Show more
         </button>
 
-        <div className="mt-6 flex flex-wrap gap-2 pt-2">
+        <div className="mt-auto pt-6 flex flex-wrap gap-2">
           {stack.map((tech) => (
             <span
               key={tech}

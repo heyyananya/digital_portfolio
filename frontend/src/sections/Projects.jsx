@@ -21,7 +21,7 @@ export const Projects = () => {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 items-start gap-6 lg:grid-cols-2">
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
           {projects.map((project) => (
             <ProjectCard 
               key={project.id} 
