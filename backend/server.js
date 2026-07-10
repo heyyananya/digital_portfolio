@@ -111,52 +111,63 @@ app.post('/api/contact', async (req, res) => {
       subject: `Portfolio message from ${name}`,
       text: `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
       html: `
-        <div style="background-color: #09090b; padding: 40px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f4f4f5; text-align: center;">
-          <div style="max-width: 600px; margin: 0 auto; background-color: #18181b; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left;">
+        <div style="background-color: #030408; padding: 50px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f4f4f5; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: #0b0c10; border: 1px solid #1f2029; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.7); text-align: left;">
             <!-- Neon Gradient bar -->
-            <div style="height: 5px; background: linear-gradient(90deg, #a855f7 0%, #06b6d4 100%);"></div>
+            <div style="height: 6px; background: linear-gradient(90deg, #a855f7 0%, #06b6d4 50%, #3b82f6 100%);"></div>
             
             <!-- Header -->
-            <div style="padding: 24px 32px; border-bottom: 1px solid #27272a;">
-              <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff;">
-                Portfolio OS <span style="color: #06b6d4;">Inbox</span>
-              </h2>
-              <p style="margin: 4px 0 0; font-family: monospace; font-size: 11px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.15em;">
-                New message submission
-              </p>
+            <div style="padding: 32px 40px; border-bottom: 1px solid #1f2029; background-color: #0d0e14;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td>
+                    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
+                      Portfolio OS <span style="color: #06b6d4;">Inbox</span>
+                    </h2>
+                    <p style="margin: 6px 0 0; font-family: monospace; font-size: 10px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.2em;">
+                      Incoming Signal Detected
+                    </p>
+                  </td>
+                  <td align="right" style="vertical-align: middle;">
+                    <div style="height: 36px; width: 36px; border-radius: 10px; background-color: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.3); text-align: center; line-height: 34px; font-weight: bold; color: #06b6d4; font-size: 14px; font-family: monospace;">
+                      IN
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
             
             <!-- Content -->
-            <div style="padding: 32px;">
-              <!-- Metadata Info -->
-              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 24px;">
+            <div style="padding: 40px; background-color: #0b0c10;">
+              <!-- Metadata Info Table -->
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 32px; border-collapse: collapse;">
                 <tr>
-                  <td style="padding-bottom: 16px;">
-                    <span style="display: block; font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; margin-bottom: 4px;">Sender Name</span>
-                    <strong style="font-size: 15px; color: #ffffff;">${escapeHtml(name)}</strong>
+                  <td style="padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.03);">
+                    <span style="display: block; font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; margin-bottom: 6px;">Sender Name</span>
+                    <strong style="font-size: 16px; color: #ffffff;">${escapeHtml(name)}</strong>
                   </td>
                 </tr>
                 <tr>
-                  <td>
-                    <span style="display: block; font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; margin-bottom: 4px;">Email Address</span>
-                    <a href="mailto:${escapeHtml(email)}" style="font-size: 14px; font-weight: 600; color: #06b6d4; text-decoration: none; border-bottom: 1px dashed rgba(6, 182, 212, 0.4);">${escapeHtml(email)}</a>
+                  <td style="padding-top: 20px; padding-bottom: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.03);">
+                    <span style="display: block; font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; margin-bottom: 6px;">Email Address</span>
+                    <a href="mailto:${escapeHtml(email)}" style="font-size: 15px; font-weight: 600; color: #06b6d4; text-decoration: none; border-bottom: 1px dashed rgba(6, 182, 212, 0.4);">${escapeHtml(email)}</a>
                   </td>
                 </tr>
               </table>
               
               <!-- Message Bubble -->
-              <div style="background-color: #09090b; border-left: 3px solid #a855f7; border-radius: 4px 8px 8px 4px; padding: 20px 24px;">
-                <span style="display: block; font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; margin-bottom: 8px;">Message details</span>
-                <div style="font-size: 14px; line-height: 1.6; color: #e4e4e7; font-family: inherit; white-space: pre-wrap;">${escapeHtml(message).replace(/\n/g, '<br>')}</div>
+              <div style="background-color: #0e0f14; border-left: 4px solid #a855f7; border-radius: 6px 12px 12px 6px; padding: 24px 28px; border: 1px solid #1f2029; border-left-color: #a855f7; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);">
+                <span style="display: block; font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; margin-bottom: 10px;">Message details</span>
+                <div style="font-size: 15px; line-height: 1.7; color: #e4e4e7; font-family: inherit; white-space: pre-wrap;">${escapeHtml(message).replace(/\n/g, '<br>')}</div>
               </div>
             </div>
             
             <!-- Footer -->
-            <div style="padding: 20px 32px; background-color: #09090b; border-top: 1px solid #27272a; text-align: center;">
+            <div style="padding: 24px 40px; background-color: #0d0e14; border-top: 1px solid #1f2029; text-align: center;">
               <p style="margin: 0; font-size: 11px; color: #52525b;">
                 Sent from your Digital Portfolio OS.
               </p>
-              <p style="margin: 4px 0 0; font-family: monospace; font-size: 9px; color: #3f3f46; text-transform: uppercase; letter-spacing: 0.1em;">
+              <p style="margin: 6px 0 0; font-family: monospace; font-size: 9px; color: #3f3f46; text-transform: uppercase; letter-spacing: 0.15em;">
                 SECURE HANDSHAKE · TIMESTAMP: ${new Date().toISOString()}
               </p>
             </div>
@@ -177,48 +188,59 @@ app.post('/api/contact', async (req, res) => {
       subject: `Message Received — Thank you for reaching out! | Ananya Patel`,
       text: `Hi ${name},\n\nThank you for reaching out! Your message has successfully reached my inbox.\n\nI check submissions daily and will follow up with you shortly.\n\nBest regards,\nAnanya Patel`,
       html: `
-        <div style="background-color: #09090b; padding: 40px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f4f4f5; text-align: center;">
-          <div style="max-width: 600px; margin: 0 auto; background-color: #18181b; border: 1px solid #27272a; border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.5); text-align: left;">
+        <div style="background-color: #030408; padding: 50px 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; color: #f4f4f5; text-align: center;">
+          <div style="max-width: 600px; margin: 0 auto; background-color: #0b0c10; border: 1px solid #1f2029; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.7); text-align: left;">
             <!-- Neon Gradient bar -->
-            <div style="height: 5px; background: linear-gradient(90deg, #a855f7 0%, #06b6d4 100%);"></div>
+            <div style="height: 6px; background: linear-gradient(90deg, #a855f7 0%, #06b6d4 50%, #3b82f6 100%);"></div>
             
             <!-- Header -->
-            <div style="padding: 24px 32px; border-bottom: 1px solid #27272a;">
-              <h2 style="margin: 0; font-size: 20px; font-weight: 700; color: #ffffff;">
-                Ananya <span style="color: #06b6d4;">Patel</span>
-              </h2>
-              <p style="margin: 4px 0 0; font-family: monospace; font-size: 11px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.15em;">
-                Message received successfully
-              </p>
+            <div style="padding: 32px 40px; border-bottom: 1px solid #1f2029; background-color: #0d0e14;">
+              <table role="presentation" border="0" cellpadding="0" cellspacing="0" width="100%">
+                <tr>
+                  <td>
+                    <h2 style="margin: 0; font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em;">
+                      Ananya <span style="color: #06b6d4;">Patel</span>
+                    </h2>
+                    <p style="margin: 6px 0 0; font-family: monospace; font-size: 10px; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.2em;">
+                      Message Received Successfully
+                    </p>
+                  </td>
+                  <td align="right" style="vertical-align: middle;">
+                    <div style="height: 36px; width: 36px; border-radius: 10px; background-color: rgba(6, 182, 212, 0.05); border: 1px solid rgba(6, 182, 212, 0.3); text-align: center; line-height: 34px; font-weight: bold; color: #06b6d4; font-size: 14px; font-family: monospace;">
+                      ✓
+                    </div>
+                  </td>
+                </tr>
+              </table>
             </div>
             
             <!-- Content -->
-            <div style="padding: 32px;">
-              <p style="margin: 0 0 16px; font-size: 16px; font-weight: 600; color: #ffffff;">Hi ${escapeHtml(name)},</p>
-              <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.6; color: #e4e4e7;">
-                Thank you for reaching out! Your message has safely reached my inbox.
+            <div style="padding: 40px; background-color: #0b0c10;">
+              <p style="margin: 0 0 16px; font-size: 16px; font-weight: 700; color: #ffffff;">Hi ${escapeHtml(name)},</p>
+              <p style="margin: 0 0 20px; font-size: 14px; line-height: 1.6; color: #d4d4d8;">
+                Thank you for reaching out! Your message has safely made its way to my inbox.
               </p>
-              <p style="margin: 0 0 24px; font-size: 14px; line-height: 1.6; color: #e4e4e7;">
-                I check submissions daily and will follow up with you shortly (usually within 24 hours).
+              <p style="margin: 0 0 32px; font-size: 14px; line-height: 1.6; color: #d4d4d8;">
+                I check incoming submissions daily and will follow up with you shortly (usually within 24 hours).
               </p>
               
               <!-- Message Bubble copy -->
-              <div style="background-color: #09090b; border: 1px solid #27272a; border-radius: 8px; padding: 20px 24px; margin-bottom: 32px;">
-                <span style="display: block; font-family: monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: #71717a; margin-bottom: 8px;">Copy of your message</span>
-                <div style="font-size: 13px; line-height: 1.6; color: #a1a1aa; font-family: inherit; white-space: pre-wrap;">${escapeHtml(message).replace(/\n/g, '<br>')}</div>
+              <div style="background-color: #0e0f14; border: 1px solid #1f2029; border-radius: 10px; padding: 24px; margin-bottom: 36px; box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);">
+                <span style="display: block; font-family: monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: #71717a; margin-bottom: 10px;">Copy of your message</span>
+                <div style="font-size: 14px; line-height: 1.6; color: #a1a1aa; font-family: inherit; white-space: pre-wrap;">${escapeHtml(message).replace(/\n/g, '<br>')}</div>
               </div>
               
               <!-- Premium Action Buttons -->
-              <div style="text-align: center; margin-top: 10px;">
-                <a href="${process.env.SMTP_USER === 'andypatel2406@gmail.com' ? 'https://www.linkedin.com/in/ananya-patel-1a61a82b3?utm_source=share_via&utm_content=profile&utm_medium=member_android' : 'https://linkedin.com/'}" target="_blank" style="display: inline-block; background: linear-gradient(90deg, #a855f7 0%, #06b6d4 100%); color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; margin: 5px 8px 5px 0;">Connect on LinkedIn</a>
-                <a href="https://github.com/ananyatech2006/" target="_blank" style="display: inline-block; background-color: #27272a; border: 1px solid #3f3f46; color: #ffffff; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 13px; margin: 5px 0;">Explore GitHub</a>
+              <div style="text-align: center; margin-top: 10px; padding: 10px 0;">
+                <a href="${process.env.SMTP_USER === 'andypatel2406@gmail.com' ? 'https://www.linkedin.com/in/ananya-patel-1a61a82b3?utm_source=share_via&utm_content=profile&utm_medium=member_android' : 'https://linkedin.com/'}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%); color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 5px 10px 5px 0; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);">Connect on LinkedIn</a>
+                <a href="https://github.com/ananyatech2006/" target="_blank" style="display: inline-block; background-color: #1f2029; border: 1px solid #2d2e3d; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 5px 0;">Explore GitHub</a>
               </div>
             </div>
             
             <!-- Footer -->
-            <div style="padding: 20px 32px; background-color: #09090b; border-top: 1px solid #27272a; text-align: center;">
+            <div style="padding: 24px 40px; background-color: #0d0e14; border-top: 1px solid #1f2029; text-align: center;">
               <p style="margin: 0; font-size: 11px; color: #52525b;">
-                Ananya Patel · Portfolio OS · 2032
+                Ananya Patel · Portfolio OS
               </p>
             </div>
           </div>
