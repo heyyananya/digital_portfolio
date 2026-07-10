@@ -20,6 +20,7 @@ export const ProjectModal = ({ project, onClose }) => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
+  const [zoomImage, setZoomImage] = useState(null);
   const { name, tagline, logo, screenshot, screenshots, status, summary, details, stack, links } = project;
 
   useEffect(() => {
@@ -46,7 +47,13 @@ export const ProjectModal = ({ project, onClose }) => {
 
   useEffect(() => {
     const handleKeyDown = (e) => {
-      if (e.key === 'Escape') triggerClose();
+      if (e.key === 'Escape') {
+        if (zoomImage) {
+          setZoomImage(null);
+        } else {
+          triggerClose();
+        }
+      }
     };
     window.addEventListener('keydown', handleKeyDown);
     
@@ -57,7 +64,7 @@ export const ProjectModal = ({ project, onClose }) => {
       window.removeEventListener('keydown', handleKeyDown);
       document.body.style.overflow = 'unset';
     };
-  }, [triggerClose]);
+  }, [triggerClose, zoomImage]);
 
   const handleBackdropClick = (e) => {
     if (e.target === e.currentTarget) triggerClose();
@@ -152,7 +159,8 @@ export const ProjectModal = ({ project, onClose }) => {
                         <img 
                           src={img} 
                           alt={`${name} preview ${idx + 1}`} 
-                          className="w-full h-auto max-h-[360px] object-cover object-top"
+                          onClick={() => setZoomImage(img)}
+                          className="w-full h-auto max-h-[480px] object-cover object-top cursor-zoom-in hover:brightness-95 transition duration-300"
                         />
                       </div>
                     ))}
@@ -285,6 +293,35 @@ export const ProjectModal = ({ project, onClose }) => {
 
         </div>
       </div>
+      
+      {/* Lightbox Photo zoom overlay */}
+      {zoomImage && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-zinc-950/90 backdrop-blur-lg cursor-zoom-out p-4"
+          style={{
+            transition: 'opacity 300ms ease-out',
+            backdropFilter: 'blur(16px)',
+            WebkitBackdropFilter: 'blur(16px)'
+          }}
+          onClick={() => setZoomImage(null)}
+        >
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setZoomImage(null);
+            }}
+            className="absolute top-4 right-4 p-2.5 rounded-xl bg-zinc-900/60 hover:bg-zinc-900/90 text-white border border-zinc-700/50 backdrop-blur-sm transition duration-300 shadow-md"
+            aria-label="Close zoom preview"
+          >
+            <X size={22} />
+          </button>
+          <img 
+            src={zoomImage} 
+            alt="Widescreen details zoom" 
+            className="max-w-full max-h-[90vh] object-contain rounded-2xl shadow-2xl border border-zinc-800/40 animate-scale-up"
+          />
+        </div>
+      )}
     </div>
   );
 };
