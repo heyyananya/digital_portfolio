@@ -40,6 +40,8 @@ jobs:
       - name: Build Frontend
         run: npm run build
         working-directory: frontend
+        env:
+          VITE_API_URL: ${{ vars.VITE_API_URL }}
 
       - name: Upload Artifact
         uses: actions/upload-pages-artifact@v3
