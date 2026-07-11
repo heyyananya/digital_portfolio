@@ -36,7 +36,7 @@ const ChannelShell = ({ icon: Icon, label, value, trailing }) => (
 );
 
 const CHANNEL_CLASS =
-  'card flex w-full transition hover:border-zinc-400 dark:hover:border-zinc-600';
+  'card flex w-full h-full transition hover:border-zinc-400 dark:hover:border-zinc-600';
 const ARROW_CLASS = 'shrink-0 text-zinc-400 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5';
 
 export const Contact = () => {
@@ -88,9 +88,9 @@ export const Contact = () => {
           </div>
         </ScrollReveal>
 
-        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2">
-          <ScrollReveal delay={150}>
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1">
+        <div className="mt-14 grid grid-cols-1 gap-6 lg:grid-cols-2 items-stretch">
+          <ScrollReveal delay={150} className="lg:h-full">
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-1 lg:grid-rows-3 lg:h-full">
               <button type="button" onClick={() => openEmail('Hello Ananya')} className={CHANNEL_CLASS}>
                 <ChannelShell
                   icon={Mail}
