@@ -19,9 +19,26 @@ export const ProjectCard = ({ project, onOpenDetails }) => {
   const { name, mark, logo, tagline, status, summary, stack, links } = project;
   const primaryLink = links.live || links.source;
 
+  const handleMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    e.currentTarget.style.setProperty('--mouse-x', `${x}px`);
+    e.currentTarget.style.setProperty('--mouse-y', `${y}px`);
+  };
+
   return (
-    <article className="card h-full flex flex-col overflow-hidden p-4 transition hover:border-zinc-400 dark:hover:border-zinc-600">
-      <div className="relative">
+    <article 
+      onMouseMove={handleMouseMove} 
+      className="card h-full flex flex-col overflow-hidden p-4 transition hover:border-zinc-400 dark:hover:border-zinc-600 group relative"
+    >
+      {/* Spotlight Hover Glow */}
+      <div 
+        className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 bg-[radial-gradient(350px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(147,51,234,0.045),transparent_80%)] dark:bg-[radial-gradient(350px_circle_at_var(--mouse-x)_var(--mouse-y),rgba(6,182,212,0.07),transparent_80%)]" 
+        aria-hidden="true"
+      />
+      <div className="relative z-10 flex flex-col h-full">
+        <div className="relative">
         <ProjectPreview mark={mark} name={name} logo={logo} />
 
         <div className="absolute right-3 top-3 flex gap-2">
@@ -103,6 +120,7 @@ export const ProjectCard = ({ project, onOpenDetails }) => {
           ))}
         </div>
       </div>
-    </article>
-  );
+    </div>
+  </article>
+);
 };

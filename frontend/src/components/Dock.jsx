@@ -13,8 +13,8 @@ const SECTIONS = [
 ];
 
 const BUTTON =
-  'relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition ' +
-  'sm:h-11 sm:w-11 focus-visible:ring-offset-0';
+  'relative flex h-9 w-9 shrink-0 items-center justify-center rounded-full transition duration-300 ' +
+  'hover:scale-110 active:scale-95 sm:h-11 sm:w-11 focus-visible:ring-offset-0 transform';
 
 const IDLE =
   'text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800 ' +
