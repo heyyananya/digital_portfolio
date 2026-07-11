@@ -151,7 +151,11 @@ export const Hero = () => {
             {/* Back Face (Flipped Monogram Signature) */}
             <div 
               className="absolute inset-0 rounded-full bg-white flex items-center justify-center border-2 border-zinc-200 overflow-hidden shadow-md"
-              style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+              style={{ 
+                backfaceVisibility: 'hidden', 
+                WebkitBackfaceVisibility: 'hidden', 
+                transform: 'rotateY(180deg)' 
+              }}
             >
               <style>{`
                 @keyframes drawSignature {
@@ -178,9 +182,9 @@ export const Hero = () => {
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 24 64 C 22 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 36 58 25 L 58 75 L 58 38 C 58 26 78 26 78 44 C 78 58 58 58 58 52 C 58 52 66 54 74 58" 
+                  d="M 15 64 C 13 48 30 22 42 22 C 50 22 48 42 40 58 C 32 68 22 72 16 62 C 13 52 24 52 42 52 C 52 52 54 36 56 25 L 56 75 L 56 38 C 56 26 83 26 83 44 C 83 58 56 58 56 52 C 56 52 66 54 78 58" 
                   stroke="url(#backMonGrad)" 
-                  strokeWidth="9" 
+                  strokeWidth="6" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
                   className={flipped ? 'animate-draw-signature' : ''}
