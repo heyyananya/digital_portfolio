@@ -148,16 +148,51 @@ export const Hero = () => {
               />
             </div>
 
-            {/* Back Face (Flipped Monogram Logo) */}
+            {/* Back Face (Flipped Monogram Signature) */}
             <div 
-              className="absolute inset-0 rounded-full bg-white flex items-center justify-center border-2 border-zinc-200 overflow-hidden"
+              className="absolute inset-0 rounded-full bg-zinc-950 flex items-center justify-center border-2 border-zinc-800"
               style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
             >
-              <img 
-                src="/logo_ap.png" 
-                alt="Ananya Patel Monogram" 
-                className="w-[180px] h-[180px] object-contain select-none pointer-events-none"
-              />
+              <style>{`
+                @keyframes drawSignature {
+                  from {
+                    stroke-dashoffset: 500;
+                  }
+                  to {
+                    stroke-dashoffset: 0;
+                  }
+                }
+                .animate-draw-signature {
+                  stroke-dasharray: 500;
+                  stroke-dashoffset: 500;
+                  animation: drawSignature 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+                  animation-delay: 0.3s;
+                }
+              `}</style>
+
+              {/* Neon particle stars inside monogram */}
+              <div className="absolute inset-0 overflow-hidden rounded-full opacity-35">
+                <div className="absolute w-[4px] h-[4px] bg-purple-400 rounded-full left-[25%] top-[30%] animate-ping duration-[4000ms]" />
+                <div className="absolute w-[3px] h-[3px] bg-cyan-400 rounded-full left-[75%] top-[45%] animate-ping duration-[3000ms]" />
+                <div className="absolute w-[3px] h-[3px] bg-indigo-400 rounded-full left-[40%] top-[70%] animate-ping duration-[5000ms]" />
+              </div>
+
+              <svg viewBox="0 0 100 100" className="w-[130px] h-[130px] select-none">
+                <defs>
+                  <linearGradient id="backMonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#c084fc" />
+                    <stop offset="100%" stopColor="#a5f3fc" />
+                  </linearGradient>
+                </defs>
+                <path 
+                  d="M 27 75 L 37 75 M 32 75 L 52 25 L 52 75 M 47 75 L 57 75 M 42 50 L 52 50 M 52 25 C 70 25 70 50 52 50" 
+                  stroke="url(#backMonGrad)" 
+                  strokeWidth="5" 
+                  strokeLinecap="round" 
+                  strokeLinejoin="round" 
+                  className={flipped ? 'animate-draw-signature' : ''}
+                />
+              </svg>
             </div>
           </div>
         </div>
