@@ -64,22 +64,22 @@ export const Hero = () => {
 
     <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center z-10">
       {/* 3D Card Flip Profile Picture Container with Orbiting HUD Rings */}
-      <div className="group/orbit relative flex items-center justify-center w-[310px] h-[310px] sm:w-[370px] sm:h-[370px] mb-2">
+      <div className="group/orbit relative flex items-center justify-center w-[360px] h-[360px] sm:w-[430px] sm:h-[430px] mb-2 -translate-y-6">
         
         {/* HUD Orbit Background Effects */}
         <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center">
           {/* Outer spinning dashed ring (accelerates on hover) */}
-          <div className="absolute w-[310px] h-[310px] sm:w-[360px] sm:h-[360px] border border-dashed border-zinc-200/30 dark:border-zinc-800/40 rounded-full animate-[spin_50s_linear_infinite] group-hover/orbit:animate-[spin_18s_linear_infinite] transition-all duration-700" />
+          <div className="absolute w-[350px] h-[350px] sm:w-[410px] sm:h-[410px] border border-dashed border-zinc-200/30 dark:border-zinc-800/40 rounded-full animate-[spin_50s_linear_infinite] group-hover/orbit:animate-[spin_18s_linear_infinite] transition-all duration-700" />
           {/* Inner spinning dotted ring (accelerates on hover) */}
-          <div className="absolute w-[280px] h-[280px] sm:w-[325px] sm:h-[325px] border border-dotted border-zinc-300/40 dark:border-zinc-700/60 rounded-full animate-[spin_25s_linear_infinite_reverse] group-hover/orbit:animate-[spin_9s_linear_infinite_reverse] transition-all duration-700" />
+          <div className="absolute w-[320px] h-[320px] sm:w-[375px] sm:h-[375px] border border-dotted border-zinc-300/40 dark:border-zinc-700/60 rounded-full animate-[spin_25s_linear_infinite_reverse] group-hover/orbit:animate-[spin_9s_linear_infinite_reverse] transition-all duration-700" />
           {/* Pulsing neon radial glow (intensifies on hover) */}
-          <div className="absolute w-[220px] h-[220px] sm:w-[260px] sm:h-[260px] rounded-full bg-gradient-to-tr from-purple-500/10 to-cyan-500/10 dark:from-purple-500/5 dark:to-cyan-500/5 blur-xl animate-pulse group-hover/orbit:from-purple-500/20 group-hover/orbit:to-cyan-500/20 group-hover/orbit:scale-105 transition-all duration-500" />
+          <div className="absolute w-[260px] h-[260px] sm:w-[310px] sm:h-[310px] rounded-full bg-gradient-to-tr from-purple-500/10 to-cyan-500/10 dark:from-purple-500/5 dark:to-cyan-500/5 blur-xl animate-pulse group-hover/orbit:from-purple-500/20 group-hover/orbit:to-cyan-500/20 group-hover/orbit:scale-105 transition-all duration-500" />
           
         </div>
 
         {/* Animated Neon Circle Ring directly around the card */}
         <div 
-          className="absolute w-[246px] h-[246px] rounded-full pointer-events-none select-none z-0 flex items-center justify-center transition-all duration-700 group-hover/orbit:scale-[1.03]"
+          className="absolute w-[286px] h-[286px] rounded-full pointer-events-none select-none z-0 flex items-center justify-center transition-all duration-700 group-hover/orbit:scale-[1.03]"
           style={{
             transformStyle: 'preserve-3d',
             transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
@@ -117,7 +117,7 @@ export const Hero = () => {
         {/* The 3D Flip Card */}
         <div 
           className="relative cursor-pointer select-none z-10"
-          style={{ perspective: '1000px', width: '220px', height: '220px' }}
+          style={{ perspective: '1000px', width: '260px', height: '260px' }}
           onClick={() => setFlipped(!flipped)}
           aria-label="Click to flip profile card"
           role="button"
@@ -174,7 +174,7 @@ export const Hero = () => {
                 }
               `}</style>
 
-              <svg viewBox="0 0 100 100" className="w-[140px] h-[140px] select-none">
+              <svg viewBox="0 0 100 100" className="w-[165px] h-[165px] select-none">
                 <path 
                   d="M 15 64 C 13 48 30 22 42 22 C 50 22 48 42 40 58 C 32 68 22 72 16 62 C 13 52 24 52 42 52 C 52 52 54 36 56 25 L 56 75 L 56 38 C 56 26 83 26 83 44 C 83 58 56 58 56 52 C 56 52 66 54 78 58" 
                   fill="none"
