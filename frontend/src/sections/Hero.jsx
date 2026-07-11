@@ -182,9 +182,9 @@ export const Hero = () => {
                 </defs>
                 {/* Flowing Cursive "AP" Calligraphy Single Stroke */}
                 <path 
-                  d="M 24 64 C 22 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 36 58 25 L 58 75 L 58 38 C 58 26 78 26 78 44 C 78 58 58 58 58 52 C 58 52 66 54 74 58" 
+                  d="M 20.5 65 L 31.5 65 M 26 65 L 45.5 23 L 61.5 65 M 35.5 47 C 40.5 44 47 44 51.5 47 M 61.5 41 L 61.5 83 M 53.5 83 L 69.5 83 M 61.5 41 C 79.5 41 81.5 65 61.5 65" 
                   stroke="url(#backMonGrad)" 
-                  strokeWidth="5.5" 
+                  strokeWidth="5" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
                   className={flipped ? 'animate-draw-signature' : ''}
