@@ -57,6 +57,9 @@ const transporter = smtpConfigured
         user: process.env.SMTP_USER,
         pass: process.env.SMTP_PASS,
       },
+      connectionTimeout: 10000, // 10 seconds connection timeout
+      greetingTimeout: 10000,   // 10 seconds greeting timeout
+      socketTimeout: 15000,     // 15 seconds socket activity timeout
     })
   : null;
 
