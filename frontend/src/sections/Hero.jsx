@@ -175,15 +175,9 @@ export const Hero = () => {
               `}</style>
 
               <svg viewBox="0 0 100 100" className="w-[140px] h-[140px] select-none">
-                <defs>
-                  <linearGradient id="backMonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#6a4a2a" />
-                    <stop offset="100%" stopColor="#9a7b56" />
-                  </linearGradient>
-                </defs>
                 <path 
                   d="M 15 64 C 13 48 30 22 42 22 C 50 22 48 42 40 58 C 32 68 22 72 16 62 C 13 52 24 52 42 52 C 52 52 54 36 56 25 L 56 75 L 56 38 C 56 26 83 26 83 44 C 83 58 56 58 56 52 C 56 52 66 54 78 58" 
-                  stroke="url(#backMonGrad)" 
+                  stroke="#9a7b56" 
                   strokeWidth="6" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
