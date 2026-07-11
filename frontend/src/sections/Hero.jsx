@@ -64,7 +64,7 @@ export const Hero = () => {
 
     <div className="relative mx-auto flex max-w-5xl flex-col items-center text-center z-10">
       {/* 3D Card Flip Profile Picture Container with Orbiting HUD Rings */}
-      <div className="group/orbit relative flex items-center justify-center w-[360px] h-[360px] sm:w-[430px] sm:h-[430px] mb-2 -translate-y-6">
+      <div className="group/orbit relative flex items-center justify-center w-[260px] h-[260px] mb-6 -translate-y-2">
         
         {/* HUD Orbit Background Effects */}
         <div className="absolute inset-0 pointer-events-none select-none flex items-center justify-center">
