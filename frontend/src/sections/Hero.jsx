@@ -148,48 +148,16 @@ export const Hero = () => {
               />
             </div>
 
-            {/* Back Side: Custom SVG Monogram */}
+            {/* Back Face (Flipped Monogram Logo) */}
             <div 
-              className="absolute inset-0 rounded-full border border-zinc-200 dark:border-zinc-800 bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-500 flex items-center justify-center shadow-lg"
-              style={{
-                backfaceVisibility: 'hidden',
-                WebkitBackfaceVisibility: 'hidden',
-                transform: 'rotateY(180deg)',
-              }}
+              className="absolute inset-0 rounded-full bg-white flex items-center justify-center border-2 border-zinc-200 overflow-hidden"
+              style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
             >
-              <style>{`
-                @keyframes drawSignature {
-                  from {
-                    stroke-dashoffset: 500;
-                  }
-                  to {
-                    stroke-dashoffset: 0;
-                  }
-                }
-                .animate-draw-signature {
-                  stroke-dasharray: 500;
-                  stroke-dashoffset: 500;
-                  animation: drawSignature 1.6s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-                  animation-delay: 0.3s;
-                }
-              `}</style>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" className="w-2/3 h-2/3 drop-shadow-[0_0_15px_rgba(255,255,255,0.85)]" fill="none">
-                <defs>
-                  <linearGradient id="backMonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                    <stop offset="0%" stop-color="#ffffff" />
-                    <stop offset="100%" stop-color="#a5f3fc" />
-                  </linearGradient>
-                </defs>
-                {/* Flowing Cursive "AP" Calligraphy Single Stroke */}
-                <path 
-                  d="M 20.5 65 L 31.5 65 M 26 65 L 45.5 23 L 61.5 65 M 35.5 47 C 40.5 44 47 44 51.5 47 M 61.5 41 L 61.5 83 M 53.5 83 L 69.5 83 M 61.5 41 C 79.5 41 81.5 65 61.5 65" 
-                  stroke="url(#backMonGrad)" 
-                  strokeWidth="5" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  className={flipped ? 'animate-draw-signature' : ''}
-                />
-              </svg>
+              <img 
+                src="/logo_ap.png" 
+                alt="Ananya Patel Monogram" 
+                className="w-[180px] h-[180px] object-contain select-none pointer-events-none"
+              />
             </div>
           </div>
         </div>
