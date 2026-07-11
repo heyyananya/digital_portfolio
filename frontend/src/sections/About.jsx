@@ -129,15 +129,9 @@ export const About = () => (
                   <Award size={20} />
                 </div>
                 <div className="min-w-0">
-                  <a 
-                    href={cert.url} 
-                    target="_blank" 
-                    rel="noreferrer noopener"
-                    className="inline-flex items-center gap-1 font-display font-semibold text-zinc-950 dark:text-zinc-50 hover:text-cyan-600 dark:hover:text-cyan-400 transition"
-                  >
+                  <span className="font-display font-semibold text-zinc-950 dark:text-zinc-50">
                     {cert.title}
-                    <ArrowUpRight size={14} className="opacity-60" />
-                  </a>
+                  </span>
                   <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mt-1">
                     {cert.issuer} {cert.instructor && `· Instructor: ${cert.instructor}`}
                   </div>
