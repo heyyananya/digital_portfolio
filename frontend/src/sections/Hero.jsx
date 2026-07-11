@@ -129,7 +129,7 @@ export const Hero = () => {
           }}
         >
           <div 
-            className="w-full h-full duration-700 transition-transform"
+            className="w-full h-full duration-700 transition-transform bg-white rounded-full"
             style={{
               transformStyle: 'preserve-3d',
               transform: flipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
@@ -138,7 +138,7 @@ export const Hero = () => {
           >
             {/* Front Side: User Photo */}
             <div 
-              className="absolute inset-0 rounded-full border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-md bg-white dark:bg-zinc-950"
+              className="absolute inset-0 rounded-full border border-zinc-200 dark:border-zinc-800 overflow-hidden shadow-md bg-white"
               style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
             >
               <img
