@@ -1,9 +1,29 @@
 import React from 'react';
+import { GraduationCap, ArrowUpRight } from 'lucide-react';
 import { SectionLabel } from '../components/SectionLabel';
 
 const STATS = [
   { value: '4', label: 'Projects built' },
   { value: '2', label: 'Shipped to production' },
+];
+
+const EDUCATION = [
+  {
+    institution: 'Pandit Deendayal Energy University (PDEU)',
+    url: 'https://pdeu.ac.in/',
+    location: 'Gandhinagar, Gujarat',
+    degree: 'B.Tech in Information & Communication Technology (ICT)',
+    duration: '2024 – Present',
+    cgpa: '8.63',
+  },
+  {
+    institution: 'Ganpat University',
+    url: 'https://www.ganpatuniversity.ac.in/',
+    location: 'Mehsana, Gujarat',
+    degree: 'Diploma in Computer Engineering',
+    duration: '2021 – 2024',
+    cgpa: '9.82',
+  },
 ];
 
 export const About = () => (
@@ -31,7 +51,50 @@ export const About = () => (
         </p>
       </div>
 
-      <div className="mx-auto mt-14 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
+      {/* Education Timeline section */}
+      <div className="mx-auto mt-16 max-w-2xl">
+        <h3 className="text-center font-mono text-xs uppercase tracking-[0.2em] text-zinc-400 dark:text-zinc-500">
+          Education & Credentials
+        </h3>
+        <div className="mt-6 space-y-4">
+          {EDUCATION.map((edu) => (
+            <div 
+              key={edu.institution} 
+              className="card p-5 flex flex-col sm:flex-row sm:items-center justify-between gap-4 transition hover:border-zinc-300 dark:hover:border-zinc-700"
+            >
+              <div className="flex items-start gap-4">
+                <div className="h-10 w-10 shrink-0 rounded-xl bg-purple-500/10 text-purple-600 dark:text-purple-400 flex items-center justify-center border border-purple-500/20">
+                  <GraduationCap size={20} />
+                </div>
+                <div className="min-w-0">
+                  <a 
+                    href={edu.url} 
+                    target="_blank" 
+                    rel="noreferrer noopener"
+                    className="inline-flex items-center gap-1 font-display font-semibold text-zinc-950 dark:text-zinc-50 hover:text-purple-600 dark:hover:text-purple-400 transition"
+                  >
+                    {edu.institution}
+                    <ArrowUpRight size={14} className="opacity-60" />
+                  </a>
+                  <div className="text-sm font-medium text-zinc-700 dark:text-zinc-300 mt-1">
+                    {edu.degree}
+                  </div>
+                  <div className="text-xs text-zinc-400 dark:text-zinc-500 mt-0.5">
+                    {edu.duration} &middot; {edu.location}
+                  </div>
+                </div>
+              </div>
+              <div className="sm:text-right shrink-0">
+                <div className="inline-flex items-center gap-1.5 rounded-full bg-gradient-to-r from-purple-600 to-cyan-500 px-3 py-1 text-xs font-bold text-white shadow-sm">
+                  CGPA: {edu.cgpa}
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-4 sm:grid-cols-2">
         {STATS.map((stat) => (
           <div key={stat.label} className="card p-6 text-center">
             <div className="font-display text-4xl font-bold tracking-tight">{stat.value}</div>
