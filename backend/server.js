@@ -321,6 +321,10 @@ app.post('/api/analytics/visit', (req, res) => {
 });
 
 // Start Server
-app.listen(PORT, () => {
-  console.log(`[PORTFOLIO OS] System server online on port ${PORT}`);
-});
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(PORT, () => {
+    console.log(`[PORTFOLIO OS] System server online on port ${PORT}`);
+  });
+}
+
+module.exports = app;

@@ -14,6 +14,8 @@ import { ScrollReveal } from '../components/ScrollReveal';
 import { profile } from '../data/portfolio';
 import { openEmail } from '../utils/contact';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000';
+
 const EMPTY_FORM = { name: '', email: '', message: '' };
 
 const ChannelShell = ({ icon: Icon, label, value, trailing }) => (
@@ -52,21 +54,13 @@ export const Contact = () => {
     setStatus('sending');
 
     try {
-      const response = await window.fetch('https://api.web3forms.com/submit', {
+      const response = await window.fetch(`${API_URL}/api/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          access_key: '88e42871-42b7-4831-9447-b9ccb2351d06',
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          subject: `New Portfolio Message from ${form.name}`,
-          from_name: 'Ananya Patel Portfolio',
-        }),
+        body: JSON.stringify(form),
       });
 
-      const data = await response.json();
-      if (!response.ok || !data.success) throw new Error('rejected');
+      if (!response.ok) throw new Error('rejected');
 
       setStatus('sent');
       setForm(EMPTY_FORM);
