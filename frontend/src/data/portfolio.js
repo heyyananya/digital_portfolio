@@ -9,7 +9,7 @@ export const profile = {
   linkedin:
     'https://www.linkedin.com/in/ananya-patel-1a61a82b3?utm_source=share_via&utm_content=profile&utm_medium=member_android',
   github: 'https://github.com/ananyatech2006/',
-  photo: '/ananya.png',
+  photo: './ananya.png',
   resume: 'https://drive.google.com/file/d/1_BAl0pgdeWHsNPbEVPym5AgzWwvIhLSX/view?usp=sharing',
 };
 
@@ -44,8 +44,8 @@ export const projects = [
   {
     id: 'hospital',
     mark: 'SD',
-    logo: '/logos/superspeciality-doctor-consultation.png',
-    screenshots: ['/Superspeciality Doctor Consultation.png', '/Superspeciality Doctor Login.png'],
+    logo: './logos/superspeciality-doctor-consultation.png',
+    screenshots: ['./Superspeciality Doctor Consultation.png', './Superspeciality Doctor Login.png'],
     name: 'Superspeciality Doctors Consultation',
     tagline: 'Four-role hospital platform with OTP login and online payments',
     status: 'live',
@@ -123,8 +123,8 @@ export const projects = [
   {
     id: 'donation',
     mark: 'VA',
-    logo: '/logos/va-donation.png',
-    screenshots: ['/VA Donation.png', '/VA Donation Login.png'],
+    logo: './logos/va-donation.png',
+    screenshots: ['./VA Donation.png', './VA Donation Login.png'],
     name: 'Vallabh Aashram Donation System',
     tagline: 'Trust donation receipts with race-safe fiscal numbering',
     status: 'live',
@@ -185,8 +185,8 @@ export const projects = [
   {
     id: 'hostel-erp',
     mark: 'HE',
-    logo: '/logos/hostel-erp.png',
-    screenshots: ['/Hostel ERP Login.png', '/Hostel ERP Dashboard.png'],
+    logo: './logos/hostel-erp.png',
+    screenshots: ['./Hostel ERP Login.png', './Hostel ERP Dashboard.png'],
     name: 'Hostel ERP',
     tagline: 'Multi-tenant hostel operations, from admission to invoice',
     status: 'wip',
@@ -237,8 +237,8 @@ export const projects = [
   {
     id: 'dcms',
     mark: 'DC',
-    logo: '/Doctor Clinic Management System.jpeg',
-    screenshots: ['/Doctor Clinic Login.png', '/Doctor Clinic Dashboard.png'],
+    logo: './Doctor Clinic Management System.jpeg',
+    screenshots: ['./Doctor Clinic Login.png', './Doctor Clinic Dashboard.png'],
     name: 'Doctor Clinic Management System',
     tagline: 'OPD to IPD to printed prescription, on a clinical letterhead',
     status: 'wip',
