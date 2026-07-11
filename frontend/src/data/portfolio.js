@@ -8,7 +8,7 @@ export const profile = {
   // Email and phone deliberately live encoded in utils/contact.js, never as plain text here.
   linkedin:
     'https://www.linkedin.com/in/ananya-patel-1a61a82b3?utm_source=share_via&utm_content=profile&utm_medium=member_android',
-  github: 'https://github.com/ananyatech2006/',
+  github: 'https://github.com/heyyananya/',
   photo: '/digital_portfolio/ananya.png',
   resume: 'https://drive.google.com/file/d/1_BAl0pgdeWHsNPbEVPym5AgzWwvIhLSX/view?usp=sharing',
 };
@@ -117,7 +117,7 @@ export const projects = [
     ],
     links: {
       live: 'https://hospital-website-plum-six.vercel.app/index.html',
-      source: 'https://github.com/ananyatech2006/hospital-website',
+      source: 'https://github.com/heyyananya/hospital-website',
     },
   },
   {
@@ -179,7 +179,7 @@ export const projects = [
     ],
     links: {
       live: 'https://vadonation.nmediasoft.com/login',
-      source: 'https://github.com/ananyatech2006/donation-management-system',
+      source: 'https://github.com/heyyananya/donation-management-system',
     },
   },
   {
@@ -310,7 +310,7 @@ export const projects = [
       'Helmet',
     ],
     links: {
-      source: 'https://github.com/ananyatech2006/hospital_management_papa',
+      source: 'https://github.com/heyyananya/hospital_management_papa',
     },
   },
 ];

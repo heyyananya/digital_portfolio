@@ -236,7 +236,7 @@ app.post('/api/contact', async (req, res) => {
               <!-- Premium Action Buttons -->
               <div style="text-align: center; margin-top: 10px; padding: 10px 0;">
                 <a href="${process.env.SMTP_USER === 'andypatel2406@gmail.com' ? 'https://www.linkedin.com/in/ananya-patel-1a61a82b3?utm_source=share_via&utm_content=profile&utm_medium=member_android' : 'https://linkedin.com/'}" target="_blank" style="display: inline-block; background: linear-gradient(135deg, #a855f7 0%, #06b6d4 100%); color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 5px 10px 5px 0; box-shadow: 0 4px 15px rgba(6, 182, 212, 0.25);">Connect on LinkedIn</a>
-                <a href="https://github.com/ananyatech2006/" target="_blank" style="display: inline-block; background-color: #1f2029; border: 1px solid #2d2e3d; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 5px 0;">Explore GitHub</a>
+                <a href="https://github.com/heyyananya/" target="_blank" style="display: inline-block; background-color: #1f2029; border: 1px solid #2d2e3d; color: #ffffff; padding: 14px 28px; border-radius: 10px; text-decoration: none; font-weight: 700; font-size: 13px; margin: 5px 0;">Explore GitHub</a>
               </div>
             </div>
             

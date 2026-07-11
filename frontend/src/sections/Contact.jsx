@@ -123,7 +123,7 @@ export const Contact = () => {
                 <ChannelShell
                   icon={Github}
                   label="GitHub"
-                  value="ananyatech2006"
+                  value="heyyananya"
                   trailing={<ArrowUpRight size={17} className={ARROW_CLASS} />}
                 />
               </a>
