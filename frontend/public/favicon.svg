@@ -1,21 +1,20 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
   <defs>
-    <!-- Background gradient purple-indigo-cyan matching your circular avatar backplate -->
-    <linearGradient id="bgGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#9333ea" />
-      <stop offset="50%" stop-color="#4f46e5" />
-      <stop offset="100%" stop-color="#06b6d4" />
+    <!-- High contrast bronze-gold gradient matching the card logo stroke -->
+    <linearGradient id="favMonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6a4a2a" />
+      <stop offset="100%" stop-color="#9a7b56" />
     </linearGradient>
   </defs>
 
-  <!-- Circular Badge Background -->
-  <circle cx="50" cy="50" r="48" fill="url(#bgGrad)" />
+  <!-- Circular White Badge Background with soft border -->
+  <circle cx="50" cy="50" r="46" fill="#ffffff" stroke="#e4e4e7" stroke-width="3" />
 
-  <!-- Custom Serif "AP" Monogram -->
+  <!-- Custom Broad Cursive "AP" Monogram -->
   <path 
-    d="M 27 75 L 37 75 M 32 75 L 52 25 L 52 75 M 47 75 L 57 75 M 42 50 L 52 50 M 52 25 C 70 25 70 50 52 50" 
-    stroke="#ffffff" 
-    stroke-width="6.5" 
+    d="M 24 64 C 22 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 36 58 25 L 58 75 L 58 38 C 58 26 78 26 78 44 C 78 58 58 58 58 52 C 58 52 66 54 74 58" 
+    stroke="url(#favMonGrad)" 
+    stroke-width="9.5" 
     stroke-linecap="round" 
     stroke-linejoin="round" 
   />

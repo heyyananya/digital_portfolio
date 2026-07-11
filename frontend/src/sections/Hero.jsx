@@ -150,44 +150,37 @@ export const Hero = () => {
 
             {/* Back Face (Flipped Monogram Signature) */}
             <div 
-              className="absolute inset-0 rounded-full bg-zinc-950 flex items-center justify-center border-2 border-zinc-800"
+              className="absolute inset-0 rounded-full bg-white flex items-center justify-center border-2 border-zinc-200 overflow-hidden shadow-md"
               style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
             >
               <style>{`
                 @keyframes drawSignature {
                   from {
-                    stroke-dashoffset: 500;
+                    stroke-dashoffset: 600;
                   }
                   to {
                     stroke-dashoffset: 0;
                   }
                 }
                 .animate-draw-signature {
-                  stroke-dasharray: 500;
-                  stroke-dashoffset: 500;
+                  stroke-dasharray: 600;
+                  stroke-dashoffset: 600;
                   animation: drawSignature 1.8s cubic-bezier(0.4, 0, 0.2, 1) forwards;
                   animation-delay: 0.3s;
                 }
               `}</style>
 
-              {/* Neon particle stars inside monogram */}
-              <div className="absolute inset-0 overflow-hidden rounded-full opacity-35">
-                <div className="absolute w-[4px] h-[4px] bg-purple-400 rounded-full left-[25%] top-[30%] animate-ping duration-[4000ms]" />
-                <div className="absolute w-[3px] h-[3px] bg-cyan-400 rounded-full left-[75%] top-[45%] animate-ping duration-[3000ms]" />
-                <div className="absolute w-[3px] h-[3px] bg-indigo-400 rounded-full left-[40%] top-[70%] animate-ping duration-[5000ms]" />
-              </div>
-
-              <svg viewBox="0 0 100 100" className="w-[130px] h-[130px] select-none">
+              <svg viewBox="0 0 100 100" className="w-[140px] h-[140px] select-none">
                 <defs>
                   <linearGradient id="backMonGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                    <stop offset="0%" stopColor="#c084fc" />
-                    <stop offset="100%" stopColor="#a5f3fc" />
+                    <stop offset="0%" stopColor="#6a4a2a" />
+                    <stop offset="100%" stopColor="#9a7b56" />
                   </linearGradient>
                 </defs>
                 <path 
-                  d="M 27 75 L 37 75 M 32 75 L 52 25 L 52 75 M 47 75 L 57 75 M 42 50 L 52 50 M 52 25 C 70 25 70 50 52 50" 
+                  d="M 24 64 C 22 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 36 58 25 L 58 75 L 58 38 C 58 26 78 26 78 44 C 78 58 58 58 58 52 C 58 52 66 54 74 58" 
                   stroke="url(#backMonGrad)" 
-                  strokeWidth="5" 
+                  strokeWidth="9" 
                   strokeLinecap="round" 
                   strokeLinejoin="round" 
                   className={flipped ? 'animate-draw-signature' : ''}
