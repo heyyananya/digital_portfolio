@@ -34,14 +34,14 @@ const Tooltip = ({ label, children, always = false }) => (
   <span className={`group relative flex items-center justify-center ${always ? '' : 'hidden sm:flex'}`}>
     {children}
     {/* Floating tooltip block */}
-    <span className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 scale-75 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 sm:bottom-auto sm:top-full sm:mb-0 sm:mt-2 lg:bottom-auto lg:top-1/2 lg:left-auto lg:right-full lg:mb-0 lg:mr-3 lg:-translate-y-1/2 lg:-translate-x-0">
-      <span className="relative flex flex-col items-center sm:flex-col-reverse lg:flex-row">
+    <span className="pointer-events-none absolute bottom-full left-1/2 z-50 mb-2 -translate-x-1/2 scale-75 opacity-0 transition-all duration-200 group-hover:scale-100 group-hover:opacity-100 sm:bottom-auto sm:top-full sm:mb-0 sm:mt-2 lg:bottom-auto lg:top-1/2 lg:right-auto lg:left-full lg:mb-0 lg:ml-3 lg:-translate-y-1/2 lg:-translate-x-0">
+      <span className="relative flex flex-col items-center sm:flex-col-reverse lg:flex-row-reverse">
         {/* Dark capsule label */}
         <span className="rounded-lg bg-zinc-950 px-2.5 py-1 text-xs font-semibold text-white shadow-md border border-zinc-800/80 dark:bg-zinc-900 whitespace-nowrap">
           {label}
         </span>
-        {/* Caret: points down on mobile, points up on tablet, points right on desktop */}
-        <span className="h-1.5 w-2.5 lg:h-2.5 lg:w-1.5 bg-zinc-950 dark:bg-zinc-900 [clip-path:polygon(0_0,50%_100%,100%_0)] sm:[clip-path:polygon(50%_0,0_100%,100%_100%)] lg:[clip-path:polygon(0_0,100%_50%,0_100%)]" />
+        {/* Caret: points down on mobile, points up on tablet, points left on desktop */}
+        <span className="h-1.5 w-2.5 lg:h-2.5 lg:w-1.5 bg-zinc-950 dark:bg-zinc-900 [clip-path:polygon(0_0,50%_100%,100%_0)] sm:[clip-path:polygon(50%_0,0_100%,100%_100%)] lg:[clip-path:polygon(100%_0,0_50%,100%_100%)]" />
       </span>
     </span>
   </span>
@@ -72,7 +72,7 @@ export const Dock = ({ theme, onToggleTheme }) => {
   const isDark = theme === 'dark';
 
   return (
-    <div className="fixed bottom-4 inset-x-0 z-50 flex justify-center px-3 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:right-6 lg:left-auto lg:inset-x-auto lg:px-0 lg:w-auto lg:h-auto">
+    <div className="fixed bottom-4 inset-x-0 z-50 flex justify-center px-3 lg:bottom-auto lg:top-1/2 lg:-translate-y-1/2 lg:left-6 lg:right-auto lg:inset-x-auto lg:px-0 lg:w-auto lg:h-auto">
       <nav
         aria-label="Primary"
         className="flex lg:flex-col max-w-full items-center gap-0.5 rounded-full border border-zinc-200
