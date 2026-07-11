@@ -180,9 +180,9 @@ export const Hero = () => {
                     <stop offset="100%" stop-color="#a5f3fc" />
                   </linearGradient>
                 </defs>
-                {/* Flowing Cursive "AN" Calligraphy Single Stroke */}
+                {/* Flowing Cursive "AP" Calligraphy Single Stroke */}
                 <path 
-                  d="M 22 64 C 20 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 38 60 33 C 64 28 66 34 65 44 C 63 56 70 68 76 68 C 82 68 83 48 82 38 C 81 30 85 34 87 43" 
+                  d="M 24 64 C 22 48 36 22 44 22 C 51 22 49 42 42 58 C 36 68 28 72 24 62 C 22 52 30 52 44 52 C 54 52 56 36 58 25 L 58 75 L 58 38 C 58 26 78 26 78 44 C 78 58 58 58 58 52 C 58 52 66 54 74 58" 
                   stroke="url(#backMonGrad)" 
                   strokeWidth="5.5" 
                   strokeLinecap="round" 
